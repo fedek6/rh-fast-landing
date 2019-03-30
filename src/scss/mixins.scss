@@ -1,0 +1,30 @@
+/**
+ * Generate local font-face
+ * @usage:
+ *  @font-face {
+ *      @include fontFaceLocal('BrunelPoster-Roman', 'BrunelPoster', 'normal', 400);
+ *  }
+ */
+@mixin fontFaceLocal($font, $family, $style, $weight) {
+  font-family: $family;
+  src: url("../fonts/"+$font+".eot");
+  src: url("../fonts/"+$font+".eot?#iefix") format("embedded-opentype"),
+    url("../fonts/"+$font+".svg#"+$font) format("svg"), url("../fonts/"+$font+".ttf") format("truetype"),
+    url("../fonts/"+$font+".woff") format("woff"), url("../fonts/"+$font+".woff2") format("woff2");
+  font-weight: $weight;
+  font-style: $style;
+}
+
+/**
+ * Standard transition
+ */
+@mixin transitionStandard($property, $time, $easing) {
+  transition: $property $time $easing;
+}
+
+/**
+ * Text shadow
+ */
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+  text-shadow: $x $y $blur $color;
+}

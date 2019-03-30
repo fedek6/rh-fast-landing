@@ -1,0 +1,41 @@
+// Includes
+@import "config.scss";
+@import "mixins.scss";
+@import "fonts.scss";
+@import "animate.scss";
+@import "universal.scss";
+
+// Components
+@import "components/preloader.scss";
+
+/**
+ * Responsive 
+ */
+
+// Extra small devices (portrait phones, less than 576px)
+// No media query since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  @import "responsive/sm.scss";
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  @import "responsive/md.scss";
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  @import "responsive/lg.scss";
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  @import "responsive/xl.scss";
+}
+
+// Extremaly large resolutions
+@media (min-width: 1800px) {
+  @import "responsive/full.scss";
+}

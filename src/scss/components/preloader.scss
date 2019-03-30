@@ -1,0 +1,44 @@
+/**
+ * Preloader
+
+ * @category component
+ */
+$preloader-bg: $dominant-color;
+
+#preloader {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 1032;
+  background-color: $preloader-bg;
+  top: 0;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+}
+
+// Pulse version
+#preloader.pulse {
+  > div {
+    animation: pulse 1.5s ease 0s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  98% {
+    opacity: 0;
+    transform: scale(2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}

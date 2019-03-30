@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+<metadata>
+Created by FontForge 20170731 at Mon Nov 14 12:40:15 2011
+ By Aleksey,,,
+Copyright (c) 2011 by Trevor Baum. All rights reserved.
+</metadata>
+<defs>
+<font id="Haymaker" horiz-adv-x="452" >
+  <font-face 
+    font-family="Haymaker"
+    font-weight="400"
+    font-stretch="normal"
+    units-per-em="1000"
+    panose-1="0 0 0 0 0 0 0 0 0 0"
+    ascent="800"
+    descent="-200"
+    bbox="78 0 785 107"
+    underline-thickness="50"
+    underline-position="-150"
+    unicode-range="U+0020-0020"
+  />
+<missing-glyph 
+ />
+    <glyph glyph-name=".notdef" 
+ />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" 
+ />
+    <glyph glyph-name="HT" horiz-adv-x="863" 
+d="M785 0h-107v107h107v-107zM485 0h-107v107h107v-107zM185 0h-107v107h107v-107z" />
+    <glyph glyph-name="space" unicode=" " 
+ />
+  </font>
+</defs></svg>

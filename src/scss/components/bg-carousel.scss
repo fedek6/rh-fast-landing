@@ -1,0 +1,100 @@
+/**
+ * Bg carousel
+ *
+ * @category component
+ */
+ $bg-carousel-images: 'image=1' 'image=100' 'image=455' 'image=234' 'image=12';
+ $bg-carousel-background: Gray;
+ $bg-carousel-delay: 3;
+ $bg-carousel-image-url: 'https://picsum.photos/800/600/?';
+ $bg-carousel-animation: 1;
+ $media-name: 'xs';
+ 
+ // Media queried bg slides generator
+ // Use this for bigger images in media queries CSS
+ @mixin bg-carousel-slides($images, $media) {
+     @each $slide in $images {
+         $i: index($images, $slide);
+ 
+         li:nth-child(#{$i}) {
+             background-image: url('#{$bg-carousel-image-url}/#{$media}/#{$slide}');
+         }
+     } 
+ }
+ 
+ .hero-gallery {
+     width: 100vw;
+     height: 100vh;
+     position: fixed;
+     top: 0;
+     left: 0;
+     background-color: $bg-carousel-background;
+     padding: 0 0;
+     margin: 0 0;
+ 
+     // Total delay
+     $delay: 0;
+     
+     // Generate slides 
+     @each $slide in $bg-carousel-images {
+         $i: index($bg-carousel-images, $slide);
+ 
+         li:nth-child(#{$i}) {
+             background-image: url('#{$bg-carousel-image-url}#{$slide}');
+             animation-delay: #{$delay}s;           
+         }
+         
+         $delay: $i * $bg-carousel-delay;
+     }     
+     
+     li {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         padding: 0 0;
+         margin: 0 0;
+         opacity: 0;
+         background-repeat: no-repeat;
+         background-size: cover;
+         /* Animation time formula: slide count x slide delay = animation length */
+         animation: fadeOut #{$delay}s linear infinite;
+         
+         span {
+           position: absolute;
+           bottom: 40px;
+           // left: 20px;
+           color: White;
+           font-size: 1.25em;
+           text-align: center;
+           width: 100%;
+         }
+     }
+     
+     // Percentage formula $bg-carousel-delay/$delay * 100
+     // this caluclates percentage length of one slide (with animation)
+     $length: (($bg-carousel-delay + $bg-carousel-animation) / $delay) * 100;
+     $length2: ($bg-carousel-delay / $delay) * 100;
+     $animationTime: ($bg-carousel-animation / $delay) * 100;
+     
+     
+     // Animation
+     @keyframes fadeOut {
+         0% {
+           opacity: 0;
+         }
+         #{$animationTime}% {
+           opacity: 1;
+         }
+         #{$length2}% {
+           opacity: 1;
+         }        
+         #{$length}% {
+           opacity: 0;
+         }
+         100% {
+           opacity: 0;
+         }
+     }
+ }

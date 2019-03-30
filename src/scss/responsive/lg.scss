@@ -1,0 +1,18 @@
+/**
+ * Local config for lg
+ * Overload variables from global config & add new ones. 
+ */
+$media-name: "lg";
+
+/** 
+ * Sections
+ */
+#hero {
+  // Responsive
+  // Put responsive values on top, it's easier to copy them with selector.
+  background-image: url("../img/bg/#{$media-name}/StockSnap_BXU6FXR5QY.jpg");
+
+  h1 {
+    font-size: 5em;
+  }
+}

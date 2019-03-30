@@ -1,0 +1,71 @@
+/**
+ * Local config
+ * Overload variables from global config & add new ones. 
+ */
+$media-name: "xs";
+$font-base: .85rem;
+
+body,
+html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $main-font-family;
+  font-size: $font-base;
+}
+
+// Loop all H
+@for $index from 1 through 6 {
+  h#{$index} {
+    font-family: $secondary-font-family;
+    font-weight: 400;
+  }
+}
+
+/**
+ * Universal classes
+ */
+.take-full-viewport {
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+/**
+ * Content related
+ */
+
+/** 
+ * Sections
+ */
+#hero {
+  // Responsive
+  // Put responsive values on top, it's easier to copy them with selector.
+  background-image: url("../img/bg/#{$media-name}/StockSnap_BXU6FXR5QY.jpg");
+
+  h1 {
+    font-size: 2em;
+
+    display: inline-block;
+    border-style: solid;
+    border-color: White;
+    border-width: 0;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+    margin: 0 0 .5em 0;
+    padding: .25em 0;
+    @include text-shadow(2px, 2px, 2px, rgba(0,0,0,.8));
+  }
+
+  p {
+    @include text-shadow(2px, 2px, 2px, rgba(0,0,0,.8));
+  }
+
+  // Universal
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  color: White;
+}

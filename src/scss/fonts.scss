@@ -1,0 +1,7 @@
+// Import external fonts
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&subset=latin-ext');
+
+// Import local fonts
+@font-face {
+    @include fontFaceLocal('Haymaker/subset-Haymaker', 'Haymaker', 'normal', 400);
+}

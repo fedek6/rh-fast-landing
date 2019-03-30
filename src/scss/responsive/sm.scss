@@ -1,0 +1,14 @@
+/**
+ * Local config for sm
+ * Overload variables from global config & add new ones. 
+ */
+$media-name: "sm";
+
+/** 
+ * Sections
+ */
+#hero {
+  // Responsive
+  // Put responsive values on top, it's easier to copy them with selector.
+  background-image: url("../img/bg/#{$media-name}/StockSnap_BXU6FXR5QY.jpg");
+}
