@@ -53,7 +53,12 @@ module.exports = function (grunt) {
                     { expand: true, cwd: '<%= packages_src %>/js-cookie/src/', src: '*.js', dest: '<%= packages_dst %>/js-cookie/' },
 
                     // Bootstrap 4
-                    { expand: true, cwd: '<%= packages_src %>/bootstrap/dist/', src: '**', dest: '<%= packages_dst %>/bootstrap/' }
+                    { expand: true, cwd: '<%= packages_src %>/bootstrap/dist/', src: '**', dest: '<%= packages_dst %>/bootstrap/' },
+
+                    // Popper.js
+                    { expand: true, cwd: '<%= packages_src %>/popper.js/dist/umd/', src: '**', dest: '<%= packages_dst %>/popper.js/' }
+
+                    
                 ]
             },
 
