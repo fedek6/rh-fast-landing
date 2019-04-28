@@ -66,7 +66,7 @@ jQuery(document).ready(function ($) {
 });
 
 $(window).on('load', function () {
-    $('#preloader').delay(1000).fadeOut(1000, function () {
+    $('#preloader').delay(500).fadeOut(1000, function () {
         $('body').addClass('ready');
     });
 });

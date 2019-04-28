@@ -1,7 +1,7 @@
 ![logo](https://realhe.ro/img/logo.svg "Realhe.ro")
 
 # rh-fast-landing
-Template for creating fast HTML5 lading pages (powered by Bootstrap 4, jQuery, wow.js)
+Template for creating fast HTML5 landing pages (powered by Bootstrap 4, jQuery, wow.js)
 
 ```
 git clone https://github.com/fedek6/rh-fast-landing
