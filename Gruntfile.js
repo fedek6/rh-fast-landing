@@ -160,7 +160,7 @@ module.exports = function (grunt) {
                             name: 'xl',
                             width: 1920,
                         }, {
-                            name: 'full',
+                            name: 'hd',
                             width: 2560,
                         }
                     ]
