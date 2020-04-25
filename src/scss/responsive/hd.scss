@@ -1,14 +1,9 @@
-/**
- * Local config for hd
- * Overload variables from global config & add new ones. 
- */
+//
+// Local config for hd
+// Overload variables from global config & add new ones. 
+//
 $media-name: "hd";
 
-/** 
- * Sections
- */
-#hero {
-  // Responsive
-  // Put responsive values on top, it's easier to copy them with selector.
-  background-image: url("../img/bg/#{$media-name}/StockSnap_BXU6FXR5QY.jpg");
-}
+// 
+// Sections
+//

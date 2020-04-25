@@ -1,63 +1,62 @@
-/**
- * Generate local font-face
- * @usage:
- *  @font-face {
- *      @include fontFaceLocal('BrunelPoster-Roman', 'BrunelPoster', 'normal', 400);
- *  }
- */
+//
+// Generate local font-face
+// @usage:
+//  @font-face {
+//      @include fontFaceLocal('BrunelPoster-Roman', 'BrunelPoster', 'normal', 400);
+//  }
+//
 @mixin fontFaceLocal($font, $family, $style, $weight) {
-  font-family: $family;
-  src: url("../fonts/"+$font+".eot");
-  src: url("../fonts/"+$font+".eot?#iefix") format("embedded-opentype"),
-    url("../fonts/"+$font+".svg#"+$font) format("svg"), url("../fonts/"+$font+".ttf") format("truetype"),
-    url("../fonts/"+$font+".woff") format("woff"), url("../fonts/"+$font+".woff2") format("woff2");
-  font-weight: $weight;
-  font-style: $style;
+    font-family: $family;
+    src: url("../fonts/" + $font + ".eot");
+    src: url("../fonts/" + $font + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $font + ".svg#" + $font) format("svg"), url("../fonts/" + $font + ".woff") format("woff"), url("../fonts/" + $font + ".ttf") format("truetype"), url("../fonts/" + $font + ".woff2") format("woff2");
+    font-weight: $weight;
+    font-style: $style;
 }
 
-/**
- * Standard transition
- */
+//
+// Standard transition
+//
 @mixin transitionStandard($property: all, $time: 250ms, $easing: ease-in) {
-  transition: $property $time $easing;
+    transition: $property $time $easing;
 }
 
-/**
- * Text shadow
- */
+//
+// Text shadow
+//
 @mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, 0.4)) {
-  text-shadow: $x $y $blur $color;
+    text-shadow: $x $y $blur $color;
 }
 
-/**
- * Box shadow
- */
+//
+// Box shadow
+//
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
-  @if $inset {
-    -webkit-box-shadow: inset $top $left $blur $color;
-    -moz-box-shadow: inset $top $left $blur $color;
-    box-shadow: inset $top $left $blur $color;
-  } @else {
-    -webkit-box-shadow: $top $left $blur $color;
-    -moz-box-shadow: $top $left $blur $color;
-    box-shadow: $top $left $blur $color;
-  }
+    @if $inset {
+        -webkit-box-shadow: inset $top $left $blur $color;
+        -moz-box-shadow: inset $top $left $blur $color;
+        box-shadow: inset $top $left $blur $color;
+    }
+    @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
 }
 
-/**
- * Rounded
- */
+//
+// Rounded
+//
 @mixin rounded($radius: 0.5em) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
 }
 
-/**
- * Gradient
- */
+//
+// Gradient
+//
 @mixin gradient($from, $to) {
-  background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
-  background: -moz-linear-gradient(top, $from, $to);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+    background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+    background: -moz-linear-gradient(top, $from, $to);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
 }

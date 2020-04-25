@@ -1,7 +1,17 @@
 // Import external fonts
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:600&subset=latin-ext');
+// @import url('https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap&subset=latin-ext');
 
 // Import local fonts
+
+// Lato
 @font-face {
-    @include fontFaceLocal('Haymaker/subset-Haymaker', 'Haymaker', 'normal', 400);
+    @include fontFaceLocal('Lato/LatoLatin-Regular', 'Lato', 'normal', 400);
+}
+
+@font-face {
+    @include fontFaceLocal('Lato/LatoLatin-Bold', 'Lato', 'normal', 700);
+}
+
+@font-face {
+    @include fontFaceLocal('Lato/LatoLatin-Heavy', 'Lato', 'normal', 900);
 }

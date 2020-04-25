@@ -1,12 +1,29 @@
-/**
- * Global configuration
- */
+//
+// Global configuration
+//
 
 // Fonts
 $main-font-family: "Lato", sans-serif;
-$secondary-font-family: "Haymaker", serif;
+$main-font-weight: 400;
+
+$secondary-font-family: "Lato", sans-serif;
+$secondary-font-weight: 700;
+
+$primary-line-height: 130%;
+$secondary-line-height: 150%;
+$low-line-height: 100%;
+
+$h-margin: .5em;
+$p-margin: 1.5em;
+
+$horizontal-base: 16px;
 
 // Colors
-$dominant-color: Silver;
-$secondary-color: Gray;
-$border-color: White;
+$dominant-color: #06b4de;
+$secondary-color: #2f1d71;
+$border-color: #06b4de;
+
+// Content
+$max-container-width: 999px;
+$max-content-width: 1300px;
+$navbar-height: 57px;

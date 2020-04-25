@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-
+    const mozjpeg = require('imagemin-mozjpeg');
     let config = grunt.file.readJSON('config.json');
     let pkg = grunt.file.readJSON('package.json');
     let replacements = [
@@ -125,7 +125,8 @@ module.exports = function (grunt) {
         imagemin: {
             dynamic: {
                 options: {
-                    optimizationLevel: 3
+                    optimizationLevel: 6,
+                    use: [mozjpeg({quality: 70})] // Example plugin usage                   
                 },
                 files: [{
                     expand: true,
@@ -142,7 +143,7 @@ module.exports = function (grunt) {
         responsive_images: {
             other: {
                 options: {
-                    quality: 50,
+                    quality: 70,
                     sizes: [
                         {
                             name: 'xs',
@@ -161,6 +162,10 @@ module.exports = function (grunt) {
                             width: 1920,
                         }, {
                             name: 'hd',
+                            width: 2560,
+                        },
+                        {
+                            name: 'full',
                             width: 2560,
                         }
                     ]
@@ -215,6 +220,19 @@ module.exports = function (grunt) {
                 dest: '<%= deploy_dst %>/img/favicon/'
             },
         },
+
+        /**
+         * Watch
+         */
+        watch: {
+            src: {
+                files: ['**/*.html', '<%= src %>/scss/**/*.scss'],
+                tasks: ['assets'],
+                options: {
+                    spawn: false,
+                },
+            },
+        },
     });
 
     // Load the plugin that provides the "uglify" task.
@@ -228,6 +246,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-includes');
     grunt.loadNpmTasks('grunt-replace');
     grunt.loadNpmTasks('grunt-favicons');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('assets', ['sass', 'concat', 'uglify', 'cssmin', 'includes', 'replace:dist']);

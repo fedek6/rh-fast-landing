@@ -1,8 +1,8 @@
-/**
- * Bg carousel
- *
- * @category component
- */
+//
+// Bg carousel
+//
+// @category component
+//
  $bg-carousel-images: 'image=1' 'image=100' 'image=455' 'image=234' 'image=12';
  $bg-carousel-background: Gray;
  $bg-carousel-delay: 3;
@@ -44,7 +44,7 @@
              animation-delay: #{$delay}s;           
          }
          
-         $delay: $i * $bg-carousel-delay;
+         $delay: $i// $bg-carousel-delay;
      }     
      
      li {
@@ -72,11 +72,11 @@
          }
      }
      
-     // Percentage formula $bg-carousel-delay/$delay * 100
+     // Percentage formula $bg-carousel-delay/$delay// 100
      // this caluclates percentage length of one slide (with animation)
-     $length: (($bg-carousel-delay + $bg-carousel-animation) / $delay) * 100;
-     $length2: ($bg-carousel-delay / $delay) * 100;
-     $animationTime: ($bg-carousel-animation / $delay) * 100;
+     $length: (($bg-carousel-delay + $bg-carousel-animation) / $delay)// 100;
+     $length2: ($bg-carousel-delay / $delay)// 100;
+     $animationTime: ($bg-carousel-animation / $delay)// 100;
      
      
      // Animation
