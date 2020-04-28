@@ -27,14 +27,34 @@ jQuery(document).ready(function ($) {
      */
     $('.wow-auto-delay').each(function () {
         var $elms = $(this).find('.wow'),
-            step = 0.25;
+            dataDelayStep = $(this).attr('data-delay-step'),
+            dataOffset = $(this).attr('data-offset'),
+            step = 0.25,
+            offset = 0;
+
+        // Change defaults if provided
+        if (typeof dataDelayStep != 'undefined') {
+            step = parseFloat(dataDelayStep);
+        }
+        console.log('INFO: Current auto step: ' + step);
+
+        if (typeof dataOffset != 'undefined') {
+            offset = parseFloat(dataOffset);
+        }
+        console.log('INFO: Current offset: ' + offset);
 
         $elms.each(function (index) {
             var delay = (index + 1) * step;
 
             $(this).attr('data-wow-delay', delay + 's');
+            $(this).attr('data-wow-offset', offset);
         });
     });
+
+    /**
+     * Init WOW.js
+     */
+    new WOW().init();
 
     /**
      * Cookie consent support
@@ -61,12 +81,48 @@ jQuery(document).ready(function ($) {
                         }
                     })
                     .css('bottom', '-' + $cookieConsent.outerHeight() + 'px');
+
             });
     }
+
+    // Smooth scroll
+    $('.plugin-smooth-scroll a').click(function (e) {
+        var href = $(this).attr('href');
+        var type = href.substring(0, 1); 
+
+        if(type !== '#') {
+            return true;
+        }
+
+        e.preventDefault();
+
+        var start_y = $(href).offset().top;
+        /* var header_offset = 0;
+        window.scroll({ top: start_y - header_offset, left: 0, behavior: 'smooth' }); */
+
+        $('html, body').animate({
+            scrollTop: start_y - 48
+        }, 1000);
+
+        return false;
+    });
+
+    /**
+     * Collapse menu on click
+     * 
+     */
+    var navMain = $(".navbar-collapse"); // avoid dependency on #id
+
+    navMain.find('a').click(function () {
+        console.log('Click');
+        navMain.collapse('hide');
+    });
+
+
 });
 
 $(window).on('load', function () {
-    $('#preloader').delay(500).fadeOut(1000, function () {
+    $('#preloader').delay(1000).fadeOut(1000, function () {
         $('body').addClass('ready');
     });
 });
