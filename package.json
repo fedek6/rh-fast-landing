@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^2.2.4",
+    "jquery": "^3.5.1",
     "jquery.typographer": "git+https://github.com/fedek6/jquery.typographer.git",
     "js-cookie": "^2.2.0",
     "popper.js": "^1.15.0",
